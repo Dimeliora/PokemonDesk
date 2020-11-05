@@ -1,0 +1,25 @@
+.footer {
+  padding: 33px 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slogan {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #212121;
+
+  @media screen and (max-width: 860px) {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+.copy {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #212121;
+}

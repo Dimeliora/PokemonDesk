@@ -1,9 +1,0 @@
-body {
-    min-height: 100vh;
-    background: linear-gradient(
-        to bottom,
-        rgb(10, 165, 221),
-        rgb(255, 255, 255)
-    );
-
-}
