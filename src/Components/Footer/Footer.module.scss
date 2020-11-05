@@ -1,25 +1,27 @@
-.footer {
-  padding: 33px 0;
+@import '../../variables';
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper {
+  width: 100%;
+  max-width: 1125px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .slogan {
-  font-size: 1.125rem;
   font-weight: 700;
-  color: #212121;
-
-  @media screen and (max-width: 860px) {
-    font-size: 1rem;
-    font-weight: 400;
-  }
+  font-size: 18px;
+  color: $dark;
 }
 
-.copy {
-  font-size: 1.125rem;
+.copyright {
   font-weight: 700;
-  color: #212121;
+  font-size: 18px;
+  color: $dark;
 }
