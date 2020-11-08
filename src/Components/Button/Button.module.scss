@@ -1,0 +1,66 @@
+@import '../../variables';
+
+.root {
+  position: relative;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 11px;
+  font-family: Karla;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 27px;
+  color: $dark;
+  cursor: pointer;
+
+  &:active {
+    outline: 0;
+    top: 3px;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.size-small {
+  height: 60px;
+}
+
+.size-large {
+  height: 66px;
+}
+
+.theme-green {
+  background: #73d677;
+  box-shadow: 0px 9px 0px rgb(106, 184, 108);
+
+  &:active {
+    box-shadow: 0px 6px 0px rgb(106, 184, 108);
+  }
+}
+
+.theme-blue {
+  background: #07d6f2;
+  box-shadow: 0px 9px 0px rgb(33, 183, 202);
+
+  &:active {
+    box-shadow: 0px 6px 0px rgb(33, 183, 202);
+  }
+}
+
+.theme-yellow {
+  background: #f2cb07;
+  box-shadow: 0px 9px 0px rgb(202, 176, 45);
+
+  &:active {
+    box-shadow: 0px 6px 0px rgb(202, 176, 45);
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
