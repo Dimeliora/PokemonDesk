@@ -1,0 +1,66 @@
+.root {
+  width: 793px;
+  height: 680px;
+  position: relative;
+  margin-right: -159px;
+}
+
+.smallPokeBall {
+  position: absolute;
+  top: 20%;
+  left: 13%;
+  max-width: 167px;
+  max-height: 167px;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.cloud {
+  position: absolute;
+  left: 5%;
+  bottom: 30%;
+  max-width: 224px;
+  max-height: 107px;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.cloudBig {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  max-width: 343px;
+  max-height: 165px;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.pokeBall {
+  position: absolute;
+  top: 10%;
+  right: 0%;
+  max-width: 315px;
+  max-height: 315px;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.pikachu {
+  position: absolute;
+  top: 17%;
+  left: 8%;
+  max-width: 558px;
+  max-height: 558px;
+
+  & img {
+    width: 100%;
+  }
+}
