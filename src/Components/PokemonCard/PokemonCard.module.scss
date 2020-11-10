@@ -1,0 +1,121 @@
+@import '../../BaseStyles/variables';
+
+.root {
+  width: 351px;
+  height: 136px;
+  box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+  background: #f6f7f9;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all ease-in-out 0.15s;
+
+  &:hover {
+    transform: scale(1.03);
+    transition: all ease-in-out 0s;
+  }
+}
+
+.infoWrap {
+  position: absolute;
+  z-index: 1;
+  width: 150px;
+  top: 6px;
+  left: 25px;
+}
+
+.titleName {
+  margin-bottom: 12px;
+  text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+  text-transform: capitalize;
+}
+
+.statWrap {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.pictureWrap {
+  width: 232px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 80%;
+  }
+}
+
+.labelWrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bug {
+  background-color: $bug;
+}
+
+.dragon {
+  background-color: $dragon;
+}
+
+.ghost {
+  background-color: $ghost;
+}
+
+.grass {
+  background-color: $grass;
+}
+
+.ground {
+  background-color: $ground;
+}
+
+.electric {
+  background-color: $electric;
+}
+
+.ice {
+  background-color: $ice;
+}
+
+.fairy {
+  background-color: $fairy;
+}
+
+.fighting {
+  background-color: $fighting;
+}
+
+.fire {
+  background-color: $fire;
+}
+
+.flying {
+  background-color: $flying;
+}
+
+.normal {
+  background-color: $normal;
+}
+
+.poison {
+  background-color: $poison;
+}
+
+.psychic {
+  background-color: $psychic;
+}
+
+.rock {
+  background-color: $rock;
+}
+
+.water {
+  background-color: $water;
+}

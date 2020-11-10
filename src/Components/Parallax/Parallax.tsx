@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
+import cn from 'classnames';
 import s from './Parallax.module.scss';
 
 import SmallPokeBallPng from './assets/pokeball1.png';
@@ -7,7 +8,11 @@ import PokeBallPng from './assets/pokeball2.png';
 import CloudBigPng from './assets/clouds2.png';
 import PikachuPng from './assets/pikachu.png';
 
-const Parallax = () => {
+interface ParallaxProps {
+  className?: string;
+}
+
+const Parallax: FC<ParallaxProps> = ({ className = null }) => {
   const [coordX, setCoordX] = useState(0);
   const [coordY, setCoordY] = useState(0);
 
@@ -23,7 +28,7 @@ const Parallax = () => {
   }, [coordX, coordY]);
 
   return (
-    <div className={s.root}>
+    <div className={cn(s.root, className)}>
       <div className={s.smallPokeBall} style={{ transform: `translate(${coordX * -0.02}px, ${coordY * -0.03}px)` }}>
         <img src={SmallPokeBallPng} alt="Small PokeBall" />
       </div>

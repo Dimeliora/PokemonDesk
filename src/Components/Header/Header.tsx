@@ -1,28 +1,17 @@
-import React from 'react';
+import React, { FC } from 'react';
 import cn from 'classnames';
-import { Link } from 'react-router-dom';
+import { A, usePath } from 'hookrouter';
 import s from './Header.module.scss';
 
-import { ReactComponent as PokeLogo } from './assets/PokeLogo.svg';
+import { MAIN_MENU } from '../../Configs/routes';
+import { ReactComponent as PokeLogo } from '../../Images/PokeLogo.svg';
 
 interface HeaderProps {
   className?: string;
 }
 
-interface IntMenu {
-  id: number;
-  title: string;
-  href: string;
-}
-
-const MENU: Array<IntMenu> = [
-  { id: 1, title: 'Home', href: '/home' },
-  { id: 2, title: 'Pokédex', href: '/pokedex' },
-  { id: 3, title: 'Legendaries', href: '/legendaries' },
-  { id: 4, title: 'Documentation', href: '/documentation' },
-];
-
-const Header: React.FC<HeaderProps> = ({ className = null }) => {
+const Header: FC<HeaderProps> = ({ className = null }) => {
+  const path = usePath();
   return (
     <header className={cn(s.root, className)}>
       <div className={s.wrapper}>
@@ -30,10 +19,10 @@ const Header: React.FC<HeaderProps> = ({ className = null }) => {
           <PokeLogo />
         </div>
         <nav className={s.menuWrap}>
-          {MENU.map(({ id, title, href }) => (
-            <Link key={id} className={s.menuLink} to={href}>
+          {MAIN_MENU.map(({ title, href }) => (
+            <A key={title} className={cn(s.menuLink, { [s.activeLink]: href === path })} href={href}>
               {title}
-            </Link>
+            </A>
           ))}
         </nav>
       </div>

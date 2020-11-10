@@ -1,20 +1,17 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { FC } from 'react';
+import { navigate } from 'hookrouter';
 import s from './ErrorPage.module.scss';
 import Button from '../../Components/Button';
 
-const ErrorPage = () => {
-  const history = useHistory();
-  const handleBackToHome = () => history.push('/home');
-
+const ErrorPage: FC = () => {
   return (
     <div className={s.root}>
       <div className={s.notice}>
-        <div className={s.noticeText}>
-          <span className={s.whiteNotice}>The rocket team </span>
-          <span className={s.blackNotice}>has won this time.</span>
-        </div>
-        <Button theme="theme-yellow" size="size-large" onClick={handleBackToHome}>
+        <p className={s.noticeText}>
+          The rocket team
+          <span className={s.blackNotice}> has won this time.</span>
+        </p>
+        <Button theme="theme-yellow" size="size-large" onClick={() => navigate('/')}>
           Return
         </Button>
       </div>

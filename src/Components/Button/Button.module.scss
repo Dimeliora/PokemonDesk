@@ -1,4 +1,4 @@
-@import '../../variables';
+@import '../../BaseStyles/variables';
 
 .root {
   position: relative;
@@ -27,11 +27,13 @@
 }
 
 .size-small {
-  height: 60px;
+  width: 200px;
+  height: 51px;
 }
 
 .size-large {
-  height: 66px;
+  width: 231px;
+  height: 57px;
 }
 
 .theme-green {

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { navigate } from 'hookrouter';
+
 import Header from '../../Components/Header';
 import Heading from '../../Components/Heading';
 import Layout from '../../Components/Layout';
@@ -8,22 +10,21 @@ import Footer from '../../Components/Footer';
 
 import s from './HomePage.module.scss';
 
-const HomePage = () => {
+const HomePage: FC = () => {
   return (
     <div className={s.root}>
-      <Header />
+      <Header/>
       <Layout className={s.contentWrap}>
         <div className={s.contentText}>
-          <Heading type="h1" className={s.heading}>
+          <Heading type="h1" weight="normal" className={s.heading}>
             <b>Find</b> all your favorite <b>Pokemon</b>
           </Heading>
           <p className={s.description}>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
-          {/* eslint-disable-next-line no-console */}
-          <Button onClick={(e) => console.log('Clicked', e)}>See pokemons</Button>
+          <Button onClick={() => navigate('/pokedex')}>See pokemons</Button>
         </div>
         <Parallax />
       </Layout>
-      <Footer />
+      <Footer/>
     </div>
   );
 };

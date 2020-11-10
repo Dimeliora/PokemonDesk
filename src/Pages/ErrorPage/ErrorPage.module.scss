@@ -1,16 +1,15 @@
-@import '../../variables';
+@import '../../BaseStyles/variables';
 
 .root {
-  position: relative;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   min-height: 100vh;
-  background: url('./assets/teamRocket.png') no-repeat center / 27%, $danger url('./assets/404.png') no-repeat center / 50%;
+  background: url('../../Images/teamRocket.png') no-repeat 50% 30%, $danger url('../../Images/404.png') no-repeat 50% 30%;
 }
 
 .notice {
-  position: absolute;
-  left: 50%;
-  bottom: 8%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,10 +20,6 @@
 
 .noticeText {
   margin-bottom: 30px;
-}
-
-.whiteNotice {
-  color: #fff;
 }
 
 .blackNotice {

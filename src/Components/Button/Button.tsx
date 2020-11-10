@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import cn from 'classnames';
 import s from './Button.module.scss';
 
@@ -11,12 +11,12 @@ interface ButtonProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   type = 'button',
   size = 'size-small',
   theme = 'theme-green',
   isFullWidth = false,
-  className,
+  className = null,
   onClick,
   children,
 }) => {
