@@ -1,9 +1,37 @@
 @import '../../variables';
 
 .root {
+<<<<<<< Updated upstream
   position: relative;
   min-height: 100vh;
   background: url('./assets/teamRocket.png') no-repeat center / 27%, $danger url('./assets/404.png') no-repeat center / 50%;
+=======
+  min-height: 100vh;
+  padding: 0 30px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background: $danger;
+}
+
+.images {
+  position: relative;
+}
+
+.notFoundImg {
+  width: 1307px;
+  max-width: 100%;
+}
+
+.rTeamImg {
+  display: block;
+  width: 55%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+>>>>>>> Stashed changes
 }
 
 .notice {

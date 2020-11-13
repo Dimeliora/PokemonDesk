@@ -9,6 +9,7 @@ interface HeaderProps {
   className?: string;
 }
 
+<<<<<<< Updated upstream
 interface IntMenu {
   id: number;
   title: string;
@@ -23,6 +24,11 @@ const MENU: Array<IntMenu> = [
 ];
 
 const Header: React.FC<HeaderProps> = ({ className = null }) => {
+=======
+const Header: FC<HeaderProps> = ({ className = null }) => {
+  const path = usePath();
+
+>>>>>>> Stashed changes
   return (
     <header className={cn(s.root, className)}>
       <div className={s.wrapper}>
@@ -41,4 +47,4 @@ const Header: React.FC<HeaderProps> = ({ className = null }) => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

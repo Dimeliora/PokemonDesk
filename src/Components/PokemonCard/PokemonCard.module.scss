@@ -1,0 +1,56 @@
+@import '../../BaseStyles/variables';
+
+.root {
+  position: relative;
+  width: 351px;
+  height: 136px;
+  border-radius: 8px;
+  background: #f6f7f9;
+  box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+  cursor: pointer;
+  transition: all ease-in-out 0.15s;
+
+  &:hover {
+    transform: scale(1.03);
+    transition: all ease-in-out 0s;
+  }
+}
+
+.infoWrap {
+  width: 150px;
+  position: absolute;
+  z-index: 1;
+  top: 6px;
+  left: 25px;
+}
+
+.titleName {
+  margin-bottom: 12px;
+  text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+  text-transform: capitalize;
+}
+
+.statWrap {
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.pictureWrap {
+  width: 232px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 80%;
+  }
+}
+
+.labelWrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
