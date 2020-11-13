@@ -1,9 +1,10 @@
-@import '../../variables';
+@import '../../BaseStyles/variables';
 .root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background: linear-gradient(180deg, $third 0%, $primary 100%);
+  overflow-x: hidden;
 }
 
 .contentWrap {
@@ -18,8 +19,6 @@
 
 .heading {
   font-weight: 400;
-  font-size: 72px;
-  line-height: 84px;
   letter-spacing: 4px;
 }
 

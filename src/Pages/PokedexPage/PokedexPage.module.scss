@@ -1,17 +1,21 @@
-@import '../../variables';
+@import '../../BaseStyles/variables';
 .root {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background: #fff;
 }
 
-.mock {
-  flex: 1 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
+.contentWrap {
+  padding: 65px 0 25px;
+}
+
+.heading {
   text-align: center;
-  text-transform: uppercase;
+}
+
+.pokemonCardsWrap {
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 351px);
+  grid-gap: 45px 35px;
+  justify-content: center;
 }
