@@ -1,0 +1,11 @@
+@import '../../BaseStyles/variables';
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loaderImage {
+  width: 200px;
+}

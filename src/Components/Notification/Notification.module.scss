@@ -1,0 +1,17 @@
+@import '../../BaseStyles/variables';
+
+.notice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.noticeTitle {
+  margin-bottom: 30px;
+  letter-spacing: 4px;
+}
+
+.noticeImage {
+  width: 200px;
+}

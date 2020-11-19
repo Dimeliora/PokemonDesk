@@ -1,12 +1,31 @@
 @import '../../BaseStyles/variables';
 
 .root {
-  padding-bottom: 70px;
+  min-height: 100vh;
+  padding: 0 30px 70px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 100vh;
-  background: url('../../Images/teamRocket.png') no-repeat 50% 30%, $danger url('../../Images/404.png') no-repeat 50% 30%;
+  align-items: center;
+  background: $danger;
+}
+
+.images {
+  position: relative;
+}
+
+.notFoundImg {
+  width: 1307px;
+  max-width: 100%;
+}
+
+.rTeamImg {
+  display: block;
+  width: 55%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .notice {

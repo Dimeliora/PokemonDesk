@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import cn from 'classnames';
 import s from './Button.module.scss';
 
-interface ButtonProps {
+interface IButtonProps {
   type?: 'button' | 'submit' | 'reset';
   size?: 'size-small' | 'size-large';
   theme?: 'theme-green' | 'theme-blue' | 'theme-yellow';
@@ -11,7 +11,7 @@ interface ButtonProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button: FC<ButtonProps> = ({
+const Button: FC<IButtonProps> = ({
   type = 'button',
   size = 'size-small',
   theme = 'theme-green',
