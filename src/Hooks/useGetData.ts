@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import request from '../Utils/request';
-import IInitState from '../Configs/apiDataInterface';
 
-const useGetData = (endpoint: string, query: object, initState: IInitState, deps: any[] = []) => {
-  const [data, setData] = useState(initState);
-  const [isFetching, setIsFetching] = useState(true);
-  const [fetchError, setIsFetchError] = useState(false);
+const useGetData = <T>(endpoint: string, query: object, deps: any[] = []): { data: T | null; isFetching: boolean; fetchError: boolean } => {
+  const [data, setData] = useState<T | null>(null);
+  const [isFetching, setIsFetching] = useState<boolean>(true);
+  const [fetchError, setIsFetchError] = useState<boolean>(false);
 
   useEffect(() => {
-    const getData = async () => {
+    const getData = async (): Promise<void> => {
       setIsFetching(true);
       try {
-        const result = await request(endpoint, query);
+        const result = await request<T>(endpoint, query);
         setData(result);
       } catch (err) {
         setIsFetchError(true);

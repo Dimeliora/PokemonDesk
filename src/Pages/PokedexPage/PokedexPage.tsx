@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import useGetData from '../../Hooks/useGetData';
-import IAPIData from '../../Configs/apiDataInterface';
+import useDebounce from '../../Hooks/useDebounce';
+import IAPIData, { IPokemons } from '../../Interfaces/apiDataInterface';
 import s from './PokedexPage.module.scss';
 import Heading from '../../Components/Heading';
 import SearchInput from '../../Components/SearchInput';
@@ -10,22 +11,19 @@ import Loader from '../../Components/Loader';
 import Notification from '../../Components/Notification';
 import Footer from '../../Components/Footer';
 
-const PokedexPage: FC = () => {
-  const initDataState: IAPIData = {
-    total: 0,
-    count: 0,
-    offset: 0,
-    limit: 0,
-    pokemons: [],
-  };
+interface IQuery {
+  name?: string;
+}
 
-  const [searchName, getSearchName] = useState('');
-  const [query, getQuery] = useState({});
-  const { data, isFetching, fetchError } = useGetData('getPokemons', query, initDataState, [searchName]);
+const PokedexPage: FC = () => {
+  const [searchName, setSearchName] = useState<string>('');
+  const debouncedValue = useDebounce(searchName, 500);
+  const [query, setQuery] = useState<IQuery>({});
+  const { data, isFetching, fetchError } = useGetData<IAPIData>('getPokemons', query, [debouncedValue]);
 
   const onSearchNameInput = (template: string) => {
-    getSearchName(template);
-    getQuery((query) => ({
+    setSearchName(template);
+    setQuery((query: IQuery) => ({
       ...query,
       name: template,
     }));
@@ -45,7 +43,7 @@ const PokedexPage: FC = () => {
 
   const cardsLayout = (
     <div className={s.pokemonCardsWrap}>
-      {pokemons.map((pokemon) => {
+      {pokemons.map((pokemon: IPokemons) => {
         const {
           id,
           name,
