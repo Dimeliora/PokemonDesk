@@ -2,11 +2,11 @@ import React, { FC } from 'react';
 import cn from 'classnames';
 import s from './Footer.module.scss';
 
-interface FooterProps {
+interface IFooterProps {
   className?: string;
 }
 
-const Footer: FC<FooterProps> = ({ className = null }) => {
+const Footer: FC<IFooterProps> = ({ className = null }) => {
   return (
     <footer className={cn(s.root, className)}>
       <div className={s.wrapper}>

@@ -1,16 +1,15 @@
-import React, { FC } from 'react';
-import cn from 'classnames';
+import React, { FC, memo } from 'react';
 import { A, usePath } from 'hookrouter';
+import cn from 'classnames';
 import s from './Header.module.scss';
-
 import { MAIN_MENU } from '../../Configs/routes';
 import { ReactComponent as PokeLogo } from '../../Images/PokeLogo.svg';
 
-interface HeaderProps {
+interface IHeaderProps {
   className?: string;
 }
 
-const Header: FC<HeaderProps> = ({ className = null }) => {
+const Header: FC<IHeaderProps> = ({ className = null }) => {
   const path = usePath();
   return (
     <header className={cn(s.root, className)}>
@@ -30,4 +29,4 @@ const Header: FC<HeaderProps> = ({ className = null }) => {
   );
 };
 
-export default Header;
+export default memo(Header);

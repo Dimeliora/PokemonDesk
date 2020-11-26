@@ -39,7 +39,7 @@ const Parallax: FC<ParallaxProps> = ({ className = null }) => {
         <img src={CloudBigPng} alt="Cloud Big PokeBall" />
       </div>
 
-      <div className={s.pokeBall} style={{ transform: `translate(${coordX * 0.06}px, ${coordY * 0.06}px)` }}>
+      <div className={s.pokeBall} style={{ transform: `translate(${coordX * 0.07}px, ${coordY * 0.08}px)` }}>
         <img src={PokeBallPng} alt="Big PokeBall" />
       </div>
       <div className={s.pikachu} style={{ transform: `translate(${coordX * 0.03}px, ${coordY * 0.02}px)` }}>

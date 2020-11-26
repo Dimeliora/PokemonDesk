@@ -1,39 +1,29 @@
 import React, { CSSProperties, FC } from 'react';
 import cn from 'classnames';
-
+import s from './PokemonCard.module.scss';
 import Heading from '../Heading';
 import PokemonCardLabel from './PokemonCardLabel';
 import PokemonCardStat from './PokemonCardStat';
+import BG_TYPES from '../../Configs/bgConstants';
 
-import s from './PokemonCard.module.scss';
-import { BG_TYPES, GRADIENT_DIFF } from './BGConstants';
-
-interface iPokemonStats {
-  hp: number;
-  attack: number;
-  defense: number;
-  'special-attack': number;
-  'special-defense': number;
-  speed: number;
-}
-
-interface iPokemonCardProps {
+interface IPokemonCardProps {
   name: string;
-  stats: iPokemonStats;
+  attack: number, 
+  defense: number,
   types: Array<string>;
   img: string;
   className?: string;
 }
 
-const PokemonCard: FC<iPokemonCardProps> = ({ name, stats, types, img, className = null }) => {
-  const { attack, defense } = stats;
+const PokemonCard: FC<IPokemonCardProps> = ({ name, attack, defense, types, img, className = null }) => {
+  let bgStyle: CSSProperties;
+  if (types.length > 1) {
+    bgStyle = {background: `linear-gradient(45deg, ${types.map(type => BG_TYPES[type]).join(', ')})`}
+  } else {
+    bgStyle = {background: `${BG_TYPES[types[0]]}`}
+  }
 
-  const [firstType, secondType] = types;
-  const bgFirstColor: number = BG_TYPES[firstType];
-  const bgSecondColor: number = BG_TYPES[secondType] || BG_TYPES[firstType] - GRADIENT_DIFF;
-  const BGStyle: CSSProperties = {
-    background: `linear-gradient(45deg, #${bgFirstColor.toString(16)} 0.15%, #${bgSecondColor.toString(16)} 100%)`,
-  };
+
   
   return (
     <div className={cn(s.root, className)}>
@@ -51,7 +41,7 @@ const PokemonCard: FC<iPokemonCardProps> = ({ name, stats, types, img, className
           ))}
         </div>
       </div>
-      <div className={s.pictureWrap} style={BGStyle}>
+      <div className={s.pictureWrap} style={bgStyle}>
         <img src={img} alt={name} />
       </div>
     </div>

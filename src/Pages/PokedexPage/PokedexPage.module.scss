@@ -1,6 +1,10 @@
 @import '../../BaseStyles/variables';
+
 .root {
-  min-height: 100vh;
+  min-height: calc(100vh - #{$headerHeight});
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #fff;
 }
 
@@ -12,10 +16,26 @@
   text-align: center;
 }
 
+.searchNameInput {
+  margin: 35px auto;
+}
+
 .pokemonCardsWrap {
   padding: 40px 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, 351px);
   grid-gap: 45px 35px;
   justify-content: center;
+}
+
+.loader {
+  margin: 50px;
+}
+
+.noPokemonsNotice {
+  margin-top: 100px;
+}
+
+.getPokemonsError {
+  flex: 1 0 auto;
 }

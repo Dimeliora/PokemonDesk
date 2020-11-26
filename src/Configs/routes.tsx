@@ -4,31 +4,38 @@ import PokedexPage from '../Pages/PokedexPage';
 import LegendariesPage from '../Pages/LegendariesPage';
 import DocumentationPage from '../Pages/DocumentationPage';
 
+export enum LinkEnum {
+  HOME = '/',
+  POKEDEX = '/pokedex',
+  LEGENDARIES = '/legendaries',
+  DOCUMENTATION = '/documentation',
+}
+
 interface IMainMenu {
   title: string;
-  href: string;
+  href: LinkEnum;
   component: () => JSX.Element;
 }
 
 export const MAIN_MENU: Array<IMainMenu> = [
   {
     title: 'Home',
-    href: '/',
+    href: LinkEnum.HOME,
     component: () => <HomePage />,
   },
   {
     title: 'Pokédex',
-    href: '/pokedex',
+    href: LinkEnum.POKEDEX,
     component: () => <PokedexPage />,
   },
   {
     title: 'Legendaries',
-    href: '/legendaries',
-    component: () => <LegendariesPage title="Legendaries"/>,
+    href: LinkEnum.LEGENDARIES,
+    component: () => <LegendariesPage title="Legendaries" />,
   },
   {
     title: 'Documentation',
-    href: '/documentation',
+    href: LinkEnum.DOCUMENTATION,
     component: () => <DocumentationPage title="Documentation" />,
   },
 ];

@@ -1,7 +1,8 @@
 @import '../../BaseStyles/variables';
 
 .root {
-  height: 93px;
+  height: $headerHeight;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

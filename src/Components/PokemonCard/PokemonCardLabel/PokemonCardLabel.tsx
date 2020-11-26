@@ -1,23 +1,20 @@
 import React, { CSSProperties, FC } from 'react';
 import cn from 'classnames';
-
 import s from './PokemonCardLabel.module.scss';
+import BG_TYPES from '../../../Configs/bgConstants'
 
-import { BG_TYPES } from '../BGConstants';
-
-interface iPokemonCardLabelProps {
+interface IPokemonCardLabelProps {
   type: string;
   className?: string;
 }
 
-const PokemonCardLabel: FC<iPokemonCardLabelProps> = ({ type, className = null }) => {
-  const bgColor: number = BG_TYPES[type];
-  const BGStyle: CSSProperties = {
-    background: `#${bgColor.toString(16)}`,
+const PokemonCardLabel: FC<IPokemonCardLabelProps> = ({ type, className = null }) => {
+  const bgStyle: CSSProperties = {
+    background: `${BG_TYPES[type]}`,
   };
 
   return (
-    <span key={type} className={cn(s.label, className)} style={BGStyle}>
+    <span key={type} className={cn(s.label, className)} style={bgStyle}>
       {type}
     </span>
   );
