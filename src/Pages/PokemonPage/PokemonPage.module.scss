@@ -1,0 +1,16 @@
+@import '../../BaseStyles/variables';
+
+.root {
+  min-height: calc(100vh - #{$headerHeight});
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mock {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
